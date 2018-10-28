@@ -1,15 +1,20 @@
 package pl.kodu.akademia.blogApplication.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import pl.kodu.akademia.blogApplication.model.Post;
+import pl.kodu.akademia.blogApplication.repository.IPostRepository;
 
-import java.sql.SQLOutput;
 
 @Controller
 public class MainController {
+
+    @Autowired
+    IPostRepository  ipostRepository;
 
     @GetMapping("/")
     public String getIndexPage(Model model) {
@@ -26,6 +31,9 @@ public class MainController {
     @PostMapping("/addPost")
     public String addPost(@RequestParam(value = "title") String title,
                           @RequestParam(value = "content") String content){
+
+        Post post = new Post(title,content);
+        ipostRepository.save(post);
         System.out.println("Params: " + title + ", " + content);
         return "index";
     }
