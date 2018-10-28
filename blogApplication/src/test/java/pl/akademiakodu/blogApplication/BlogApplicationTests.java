@@ -1,4 +1,4 @@
-package pl.kodu.akademia.blogApplication;
+package pl.akademiakodu.blogApplication;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

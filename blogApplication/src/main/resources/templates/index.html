@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Main blog</title>
+    <title>My Blog</title>
 </head>
 <body>
+<h1>WELCOME TO MY BLOG</h1>
+<p th:text="${name}">Siema</p>
 
+<button onclick="location.href='addPost'" type="button">
+    Add New Post
+<br>
+    <button onclick="location.href='posts'" type="button">
+        Show All Posts
+    </button>
+</button>
 </body>
-
-<h1> Welcome in my blog </h1>
-<p th:text="${name}"> Siema </p>
-
-<div th:fragment="footer">
-    &copy; 2018 Mateusz
-</div>
-
-<button onclick="location.href='add'" type="button">
-    Add New Post</button>
-
 </html>
