@@ -9,5 +9,13 @@
 </body>
 
 <h1> Welcome in my blog </h1>
-<p th:text="${name}" > Siema </p>
+<p th:text="${name}"> Siema </p>
+
+<div th:fragment="footer">
+    &copy; 2018 Mateusz
+</div>
+
+<button onclick="location.href='add'" type="button">
+    AddPost</button>
+
 </html>
