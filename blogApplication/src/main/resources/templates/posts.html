@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>My Blog</title>
 </head>
-<body>
 
-<h1>Moje posty</h1>
+<div th:replace="~{includes/searchbar :: searchForm}"></div>
+
+<h1>My posts</h1>
 <div th:each="post : ${posts}">
     <h2 th:text="${post.title}"></h2>
     <div th:text="${post.content}"></div>
@@ -15,6 +16,10 @@
         <div th:text="${comment.comment}"></div>
     </div>
 </div>
+<button onclick="location.href='/'" type="button">
+    HomePage
+</button>
+
 
 </body>
 </html>
